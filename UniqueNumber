@@ -38,4 +38,4 @@ public class uniquenumber{
 Output:
 10 --- lower limit
 15 --- upper limit
-5 --- unique nombers between the range
+5 --- unique numbers between the range
