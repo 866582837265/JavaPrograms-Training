@@ -1,0 +1,5 @@
+Concept:
+from given range, find prime numbers and then find the difference between them, if the diff is 6 (here, it may vary acc to ques) the pair is prime.
+
+Code:
+
