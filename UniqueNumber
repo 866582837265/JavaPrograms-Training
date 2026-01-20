@@ -1,0 +1,36 @@
+Concept:
+if a number has 2 similar digits then not unique.
+Ex: 11 is not unique but 12 is.
+
+
+Code:
+import java.util.Scanner;
+
+public class uniquenumber{
+    public static void main(){
+        Scanner sc = new Scanner(System.in);
+        int start=sc.nextInt();
+        int end=sc.nextInt();
+        int count=0;
+        
+        for(int i=start;i<=end;i++){
+            int temp=i;
+            boolean[] used = new boolean[10];
+            boolean isUnique = true;
+            
+            while(temp>0){
+                int digit = temp % 10;
+                if(used[digit]){
+                    isUnique=false;
+                    break;
+                }
+                used[digit] = true;
+                temp /= 10;
+            }
+            if(isUnique){
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
