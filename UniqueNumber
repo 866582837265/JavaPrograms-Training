@@ -7,7 +7,7 @@ Code:
 import java.util.Scanner;
 
 public class uniquenumber{
-    public static void main(){
+    public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
         int start=sc.nextInt();
         int end=sc.nextInt();
@@ -34,3 +34,8 @@ public class uniquenumber{
         System.out.println(count);
     }
 }
+
+Output:
+10 --- lower limit
+15 --- upper limit
+5 --- unique nombers between the range
