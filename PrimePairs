@@ -2,4 +2,42 @@ Concept:
 from given range, find prime numbers and then find the difference between them, if the diff is 6 (here, it may vary acc to ques) the pair is prime.
 
 Code:
+import java.util.Scanner;
 
+class PrimePairs {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter start: ");
+        int start = sc.nextInt();
+
+        System.out.print("Enter end: ");
+        int end = sc.nextInt();
+
+        for (int i = start; i <= end - 2; i++) {
+            if (isPrime(i) && isPrime(i + 2)) {
+                System.out.println(i + " " + (i + 2));
+            }
+        }
+    }
+
+    static boolean isPrime(int n) {
+        if (n <= 1) return false;
+
+        for (int i = 2; i < n; i++) {
+            if (n % i == 0)
+                return false;
+        }
+        return true;
+    }
+}
+
+
+Output: Enter start: 10
+Enter end: 50
+11 13
+17 19
+29 31
+41 43
+
+=== Code Execution Successful ===
