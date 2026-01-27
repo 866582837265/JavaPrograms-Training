@@ -1,0 +1,46 @@
+import java.util.*;
+class Node {
+    int data;
+    Node left, right;
+    Node(int val) {
+        data = val;
+        left = right = null;
+    }
+}
+class BST {
+    Node insert(Node root, int key) {
+        if (root == null)
+            return new Node(key);
+
+        if (key < root.data)
+            root.left = insert(root.left, key);
+        else if (key > root.data)
+            root.right = insert(root.right, key);
+        return root;
+    }
+    boolean search(Node root, int key) {
+        if (root == null)
+            return false;
+        if (root.data == key)
+            return true;
+        if (key < root.data)
+            return search(root.left, key);
+        else
+            return search(root.right, key);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        BST tree = new BST();
+        Node root = null;
+        root = tree.insert(root, 30);
+        tree.insert(root, 23);
+        tree.insert(root, 12);
+        tree.insert(root, 8);
+        int key = 12;
+        if (tree.search(root, key))
+            System.out.println(key + " found in BST");
+        else
+            System.out.println(key + " not found in BST");
+    }
+}
