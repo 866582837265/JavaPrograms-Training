@@ -2,6 +2,7 @@ import java.util.*;
 class Node {
     int data;
     Node left, right;
+
     Node(int val) {
         data = val;
         left = right = null;
@@ -18,5 +19,17 @@ class BST {
             root.right = insert(root.right, key);
         }
         return root;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BST tree = new BST();
+        Node root = null;
+        root = tree.insert(root, 30);
+        root = tree.insert(root, 23);
+        root = tree.insert(root, 12);
+        root = tree.insert(root, 8);
+        System.out.println("BST inserted successfully");
     }
 }
